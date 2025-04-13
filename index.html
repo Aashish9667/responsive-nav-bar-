@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Navbar</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+  <!-- Navbar -->
+  <nav class="bg-red-600 text-white px-6 py-4 flex justify-between items-center">
+    <div class="text-2xl font-bold">Burger King</div>
+
+    <!-- Desktop Menu -->
+    <ul class="hidden md:flex space-x-6">
+      <li><a href="#" class="hover:text-yellow-300">Home</a></li>
+      <li><a href="#" class="hover:text-yellow-300">Menu</a></li>
+      <li><a href="#" class="hover:text-yellow-300">Deals</a></li>
+      <li><a href="#" class="hover:text-yellow-300">Contact</a></li>
+    </ul>
+
+    <!-- Hamburger Icon (Mobile) -->
+    <button id="menu-btn" class="md:hidden focus:outline-none">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16" >
+      </svg>
+    </button>
+  </nav>
+  
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-red-600 text-white px-6 py-4 space-y-2">
+    <a href="#" class="block hover:text-yellow-300">Home</a>
+    <a href="#" class="block hover:text-yellow-300">Menu</a>
+    <a href="#" class="block hover:text-yellow-300">Deals</a>
+    <a href="#" class="block hover:text-yellow-300">Contact</a>
+  </div>
+
+   <!-- Hero Section -->
+   <section class="flex flex-col md:flex-row items-center justify-between px-8 py-16 bg-yellow-100">
+    <div class="md:w-1/2 mb-8 md:mb-0">
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Flame-Grilled Perfection</h1>
+      <p class="text-lg mb-6">Get your hands on the King of Burgers, hot and juicy straight off the grill.</p>
+      <a href="#" class="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-xl transition">
+        Order Now
+      </a>
+    </div>
+    <div class="md:w-1/2">
+      <img src="hero-background1.jpg" alt="Burger King Burger" class="rounded-xl shadow-xl w-full max-w-md mx-auto" />
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-6 bg-red-600 text-white mt-8">
+    &copy; 2025 Burger King. All rights reserved.
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+
+</body>
+</html>
